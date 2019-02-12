@@ -16,6 +16,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
+        
     }
 
     /**
@@ -27,6 +29,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JanelaP = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         JM_cadastro = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -35,6 +38,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout JanelaPLayout = new javax.swing.GroupLayout(JanelaP);
+        JanelaP.setLayout(JanelaPLayout);
+        JanelaPLayout.setHorizontalGroup(
+            JanelaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 719, Short.MAX_VALUE)
+        );
+        JanelaPLayout.setVerticalGroup(
+            JanelaPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 401, Short.MAX_VALUE)
+        );
 
         JM_cadastro.setText("Cadastros");
         jMenuBar1.add(JM_cadastro);
@@ -57,11 +71,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 719, Short.MAX_VALUE)
+            .addComponent(JanelaP)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addComponent(JanelaP, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         setSize(new java.awt.Dimension(735, 461));
@@ -99,12 +113,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JM_cadastro;
+    private javax.swing.JDesktopPane JanelaP;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
