@@ -17,8 +17,8 @@ public class TelaLogin extends javax.swing.JFrame {
         bt_acessar = new javax.swing.JButton();
         bt_sair = new javax.swing.JButton();
         JB_user = new javax.swing.JLabel();
-        JT_user = new javax.swing.JTextField();
-        JT_password = new javax.swing.JPasswordField();
+        JTusuario = new javax.swing.JTextField();
+        JTsenha = new javax.swing.JPasswordField();
         JB_password = new javax.swing.JLabel();
         JL_LogoLogin = new javax.swing.JLabel();
         JB_fundoLogin = new javax.swing.JLabel();
@@ -33,23 +33,26 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(bt_acessar);
-        bt_acessar.setBounds(240, 170, 73, 40);
+        bt_acessar.setBounds(260, 170, 73, 40);
 
         bt_sair.setText("Sair");
+        bt_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_sairActionPerformed(evt);
+            }
+        });
         getContentPane().add(bt_sair);
-        bt_sair.setBounds(330, 170, 70, 40);
+        bt_sair.setBounds(350, 170, 70, 40);
 
         JB_user.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         JB_user.setForeground(new java.awt.Color(255, 255, 255));
         JB_user.setText("Usuário:");
         getContentPane().add(JB_user);
         JB_user.setBounds(180, 80, 80, 30);
-        getContentPane().add(JT_user);
-        JT_user.setBounds(260, 80, 160, 30);
-
-        JT_password.setText("jPasswordField1");
-        getContentPane().add(JT_password);
-        JT_password.setBounds(260, 120, 160, 30);
+        getContentPane().add(JTusuario);
+        JTusuario.setBounds(260, 80, 160, 30);
+        getContentPane().add(JTsenha);
+        JTsenha.setBounds(260, 120, 160, 30);
 
         JB_password.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         JB_password.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,6 +80,10 @@ public class TelaLogin extends javax.swing.JFrame {
         dispose();// Fecha a tela login
          
     }//GEN-LAST:event_bt_acessarActionPerformed
+
+    private void bt_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_sairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_bt_sairActionPerformed
     // </editor-fold> 
     
     
@@ -120,8 +127,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel JB_password;
     private javax.swing.JLabel JB_user;
     private javax.swing.JLabel JL_LogoLogin;
-    private javax.swing.JPasswordField JT_password;
-    private javax.swing.JTextField JT_user;
+    private javax.swing.JPasswordField JTsenha;
+    private javax.swing.JTextField JTusuario;
     private javax.swing.JButton bt_acessar;
     private javax.swing.JButton bt_sair;
     // End of variables declaration//GEN-END:variables
