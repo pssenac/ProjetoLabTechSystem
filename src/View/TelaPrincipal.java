@@ -31,7 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jpPrincipal = new javax.swing.JDesktopPane();
         btnCliente = new javax.swing.JButton();
         btnVenda = new javax.swing.JButton();
         btnEstornoVenda = new javax.swing.JButton();
@@ -56,6 +56,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnEstornoVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/shopping-basket-remove-icon.png"))); // NOI18N
         btnEstornoVenda.setToolTipText("Estorno");
+        btnEstornoVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstornoVendaActionPerformed(evt);
+            }
+        });
 
         btnOrdem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tete.png"))); // NOI18N
         btnOrdem.setToolTipText("Ordem de Serviço");
@@ -63,18 +68,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnOrdem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Users-Folder-Blue-icon.png"))); // NOI18N
         btnOrdem1.setToolTipText("Ordem de Serviço");
 
-        jDesktopPane1.setLayer(btnCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnVenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnEstornoVenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnOrdem, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnOrdem1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpPrincipal.setLayer(btnCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpPrincipal.setLayer(btnVenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpPrincipal.setLayer(btnEstornoVenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpPrincipal.setLayer(btnOrdem, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpPrincipal.setLayer(btnOrdem1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
+        jpPrincipal.setLayout(jpPrincipalLayout);
+        jpPrincipalLayout.setHorizontalGroup(
+            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPrincipalLayout.createSequentialGroup()
+                .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnEstornoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -82,9 +87,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnOrdem1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(0, 604, Short.MAX_VALUE))
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+        jpPrincipalLayout.setVerticalGroup(
+            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPrincipalLayout.createSequentialGroup()
                 .addComponent(btnCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,11 +132,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jpPrincipal)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jpPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         setSize(new java.awt.Dimension(735, 932));
@@ -145,6 +150,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void btnEstornoVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstornoVendaActionPerformed
+        TelaFuncionario obj = new TelaFuncionario();
+        if(jpPrincipal.getAllFrames().length>=0){
+          jpPrincipal.add(obj);
+          obj.setVisible(true);
+          
+        }
+        else 
+        {
+          jpPrincipal.add(obj);
+          obj.setVisible(true);
+        
+        }
+    }//GEN-LAST:event_btnEstornoVendaActionPerformed
 
     
     
@@ -194,11 +214,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdem;
     private javax.swing.JButton btnOrdem1;
     private javax.swing.JButton btnVenda;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JDesktopPane jpPrincipal;
     // End of variables declaration//GEN-END:variables
 }
