@@ -61,6 +61,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnEstornoVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/shopping-basket-remove-icon.png"))); // NOI18N
         btnEstornoVenda.setToolTipText("Estorno");
+        btnEstornoVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstornoVendaActionPerformed(evt);
+            }
+        });
 
         btnOrdem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tete.png"))); // NOI18N
         btnOrdem.setToolTipText("Ordem de Serviço");
@@ -150,6 +155,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void btnEstornoVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstornoVendaActionPerformed
+        TelaFuncionario obj = new TelaFuncionario();
+        if(jpPrincipal.getAllFrames().length>=0){
+          jpPrincipal.add(obj);
+          obj.setVisible(true);
+          
+        }
+        else 
+        {
+          jpPrincipal.add(obj);
+          obj.setVisible(true);
+        
+        }
+    }//GEN-LAST:event_btnEstornoVendaActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
         TelaCliente obj = new TelaCliente();
