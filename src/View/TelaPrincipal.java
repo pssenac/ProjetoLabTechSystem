@@ -47,6 +47,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
+        jpPrincipal.setLayout(jpPrincipalLayout);
+        jpPrincipalLayout.setHorizontalGroup(
+            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 598, Short.MAX_VALUE)
+        );
+        jpPrincipalLayout.setVerticalGroup(
+            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 872, Short.MAX_VALUE)
+        );
+
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ClienteTelaPrincipal.png"))); // NOI18N
         btnCliente.setToolTipText("Cadastrar Cliente");
         btnCliente.setBorderPainted(false);
@@ -69,42 +80,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnOrdem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tete.png"))); // NOI18N
         btnOrdem.setToolTipText("Ordem de Serviço");
+        btnOrdem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdemActionPerformed(evt);
+            }
+        });
 
         btnOrdem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Users-Folder-Blue-icon.png"))); // NOI18N
         btnOrdem1.setToolTipText("Ordem de Serviço");
-
-        jpPrincipal.setLayer(btnCliente, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jpPrincipal.setLayer(btnVenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jpPrincipal.setLayer(btnEstornoVenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jpPrincipal.setLayer(btnOrdem, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jpPrincipal.setLayer(btnOrdem1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
-        jpPrincipal.setLayout(jpPrincipalLayout);
-        jpPrincipalLayout.setHorizontalGroup(
-            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnEstornoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOrdem1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 604, Short.MAX_VALUE))
-        );
-        jpPrincipalLayout.setVerticalGroup(
-            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addComponent(btnCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEstornoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
-                .addComponent(btnOrdem1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
 
         JM_cadastro.setText("Cadastros");
         jMenuBar1.add(JM_cadastro);
@@ -137,11 +120,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpPrincipal)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEstornoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOrdem1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpPrincipal))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jpPrincipal)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEstornoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnOrdem1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setSize(new java.awt.Dimension(735, 932));
@@ -181,6 +182,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             obj.setVisible(true);
         }
     }//GEN-LAST:event_btnClienteActionPerformed
+
+    private void btnOrdemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdemActionPerformed
+        TelaOrdemServico obj = new TelaOrdemServico();
+        if (jpPrincipal.getAllFrames().length >= 0) {         
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
+        } else {
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
+        }
+    }//GEN-LAST:event_btnOrdemActionPerformed
             
     
     /**
