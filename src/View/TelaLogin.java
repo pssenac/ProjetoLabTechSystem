@@ -25,6 +25,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
         bt_acessar.setText("Acessar");
@@ -67,13 +68,13 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/layout.jpg"))); // NOI18N
         getContentPane().add(lbl);
-        lbl.setBounds(0, 0, 460, 250);
+        lbl.setBounds(0, 0, 450, 250);
 
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(360, 40, 34, 14);
 
-        setSize(new java.awt.Dimension(476, 282));
+        setSize(new java.awt.Dimension(450, 243));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
