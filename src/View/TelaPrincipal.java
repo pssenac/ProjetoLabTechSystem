@@ -48,16 +48,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        javax.swing.GroupLayout jpPrincipalLayout = new javax.swing.GroupLayout(jpPrincipal);
-        jpPrincipal.setLayout(jpPrincipalLayout);
-        jpPrincipalLayout.setHorizontalGroup(
-            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
-        );
-        jpPrincipalLayout.setVerticalGroup(
-            jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 872, Short.MAX_VALUE)
-        );
+        jpPrincipal.setLayout(new javax.swing.BoxLayout(jpPrincipal, javax.swing.BoxLayout.LINE_AXIS));
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ClienteTelaPrincipal.png"))); // NOI18N
         btnCliente.setToolTipText("Cadastrar Cliente");
