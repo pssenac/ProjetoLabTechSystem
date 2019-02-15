@@ -5,7 +5,10 @@
  */
 package View;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import javafx.scene.paint.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +23,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setUndecorated(true);     
+        
+        
+        
+        
+        
+        
     }
 
     /**
@@ -31,7 +40,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpPrincipal = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/LogoLabTecnologia.jpg"));
+
+        Image image = icon.getImage();
+        jpPrincipal = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g){
+
+                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+
+        };
         btnCliente = new javax.swing.JButton();
         btnVenda = new javax.swing.JButton();
         btnEstornoVenda = new javax.swing.JButton();
@@ -46,6 +64,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(8, 73, 20));
         setResizable(false);
 
         jpPrincipal.setLayout(new javax.swing.BoxLayout(jpPrincipal, javax.swing.BoxLayout.LINE_AXIS));
@@ -133,8 +152,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnEstornoVenda1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnOrdem1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jpPrincipal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +170,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnOrdem1)
-                .addGap(0, 93, Short.MAX_VALUE))
+                .addGap(0, 92, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(735, 932));

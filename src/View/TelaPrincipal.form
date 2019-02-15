@@ -38,6 +38,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="14" green="49" red="8" type="rgb"/>
+    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -71,8 +74,8 @@
                   <Component id="btnOrdem" pref="0" max="32767" attributes="0"/>
                   <Component id="btnOrdem1" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="jpPrincipal" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jpPrincipal" pref="598" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,13 +94,17 @@
               <Component id="btnOrdem" min="-2" pref="123" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnOrdem1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="93" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="92" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="jpPrincipal">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;    public void paintComponent(Graphics g){&#xa;&#xa;        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);&#xa;    }&#xa;&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/imagens/LogoLabTecnologia.jpg&quot;));&#xa;&#xa;Image image = icon.getImage();"/>
+      </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
     </Container>
