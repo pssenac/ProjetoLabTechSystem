@@ -80,6 +80,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnOrdem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Users-Folder-Blue-icon.png"))); // NOI18N
         btnOrdem1.setToolTipText("Ordem de Serviço");
+        btnOrdem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdem1ActionPerformed(evt);
+            }
+        });
 
         btnEstornoVenda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/shopping-basket-remove-icon.png"))); // NOI18N
         btnEstornoVenda1.setToolTipText("Estorno");
@@ -201,6 +206,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void btnEstornoVenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstornoVenda1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEstornoVenda1ActionPerformed
+
+    private void btnOrdem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdem1ActionPerformed
+        TelaAdmin adm = new TelaAdmin();
+        adm.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_btnOrdem1ActionPerformed
             
     
     /**
