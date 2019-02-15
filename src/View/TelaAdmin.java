@@ -76,6 +76,7 @@ public class TelaAdmin extends javax.swing.JFrame {
 
         btnProduto.setToolTipText("Ordem de Serviço");
 
+        btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fornecedores-icone.png"))); // NOI18N
         btnFornecedor.setToolTipText("Estorno");
         btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +180,14 @@ public class TelaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRelatorioActionPerformed
 
     private void btnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedorActionPerformed
-        
+        TelaFornecedor obj = new TelaFornecedor();
+        if (jpPrincipal.getAllFrames().length >= 0) {
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
+        } else {
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
+        }
     }//GEN-LAST:event_btnFornecedorActionPerformed
 
     private void btnPesquisaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaVendaActionPerformed
