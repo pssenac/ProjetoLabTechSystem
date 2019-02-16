@@ -1,8 +1,8 @@
 
-package Model;
+package Models;
 
 
-public class ClasseFornecedor {
+public class Fornecedores {
     
     private String IdFornecedor;
     private String cnpjFornecedor;
@@ -13,6 +13,7 @@ public class ClasseFornecedor {
     private String ramoFornecedor;
     private String telFornecedor;
     private String celFornecedor;
+    private int fkEnderecoFornecedor;
 
     public String getIdFornecedor() {
         return IdFornecedor;
@@ -85,6 +86,16 @@ public class ClasseFornecedor {
     public void setCelFornecedor(String celFornecedor) {
         this.celFornecedor = celFornecedor;
     }
+
+    public int getFkEnderecoFornecedor() {
+        return fkEnderecoFornecedor;
+    }
+
+    public void setFkEnderecoFornecedor(int fkEnderecoFornecedor) {
+        this.fkEnderecoFornecedor = fkEnderecoFornecedor;
+    }
+
+   
+
     
-            
 }

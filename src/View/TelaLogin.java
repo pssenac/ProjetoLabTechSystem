@@ -2,11 +2,17 @@
 package View;
 
 
-public class TelaLogin extends javax.swing.JFrame {
 
+public class TelaLogin extends javax.swing.JFrame {
+    
+    
+    
+    
    
     public TelaLogin() {
         initComponents();
+        
+        
     }
 
     

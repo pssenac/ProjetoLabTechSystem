@@ -1,10 +1,10 @@
 
-package Model;
+package Models;
 
 import java.util.Date;
 
 
-public class ClasseProduto {
+public class Produtos {
   
    private String idProduto;
    private String  nomeProduto;
@@ -17,7 +17,10 @@ public class ClasseProduto {
    private Double valorVendaProduto;
    private int situaçaoProduto;
    private String armazemLocalProduto;
+   private int fkFornecedorProduto;
 
+   
+   
     public String getIdProduto() {
         return idProduto;
     }
@@ -106,10 +109,18 @@ public class ClasseProduto {
         this.armazemLocalProduto = armazemLocalProduto;
     }
 
-    
+    public int getFkFornecedorProduto() {
+        return fkFornecedorProduto;
+    }
 
-    
-    
-    
-    
-}
+    public void setFkFornecedorProduto(int fkFornecedorProduto) {
+        this.fkFornecedorProduto = fkFornecedorProduto;
+    }
+   
+   
+   
+   
+   
+   
+
+}  

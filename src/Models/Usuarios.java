@@ -1,13 +1,14 @@
 
-package Model;
+package Models;
 
 
-public class ClasseUsuario {
+public class Usuarios {
     private String idUsuario;
     private String loginUsuario;
     private int perfilUsuario;
     private String SenhaUsuario;
     private String confirmacaoSenhaUsuario;
+    private int fkFuncionarioUsuario;
 
     public String getIdUsuario() {
         return idUsuario;
@@ -48,6 +49,16 @@ public class ClasseUsuario {
     public void setConfirmacaoSenhaUsuario(String confirmacaoSenhaUsuario) {
         this.confirmacaoSenhaUsuario = confirmacaoSenhaUsuario;
     }
+
+    public int getFkFuncionarioUsuario() {
+        return fkFuncionarioUsuario;
+    }
+
+    public void setFkFuncionarioUsuario(int fkFuncionarioUsuario) {
+        this.fkFuncionarioUsuario = fkFuncionarioUsuario;
+    }
+
+   
 
     
 

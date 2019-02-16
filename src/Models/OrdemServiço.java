@@ -1,10 +1,10 @@
 
-package Model;
+package Models;
 
 import java.util.Date;
 
 
-public class ClasseOrdemServiço {
+public class OrdemServiço {
     
    private String idServico;
    private String  tipoServico;
@@ -16,6 +16,8 @@ public class ClasseOrdemServiço {
    private String descricaoServico;
    private String respTecnicoServico;
    private String observacaoServico;
+   private int fkclienteServico;
+   private int fkfuncioanrioServico;
 
     public String getIdServico() {
         return idServico;
@@ -96,6 +98,26 @@ public class ClasseOrdemServiço {
     public void setObservacaoServico(String observacaoServico) {
         this.observacaoServico = observacaoServico;
     }
+
+    public int getFkclienteServico() {
+        return fkclienteServico;
+    }
+
+    public void setFkclienteServico(int fkclienteServico) {
+        this.fkclienteServico = fkclienteServico;
+    }
+
+    public int getFkfuncioanrioServico() {
+        return fkfuncioanrioServico;
+    }
+
+    public void setFkfuncioanrioServico(int fkfuncioanrioServico) {
+        this.fkfuncioanrioServico = fkfuncioanrioServico;
+    }
+           
+   
+
+    
             
     
 }

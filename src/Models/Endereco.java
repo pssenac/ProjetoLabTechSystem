@@ -1,8 +1,8 @@
 
-package Model;
+package Models;
 
 
-public class ClasseEndereco {
+public class Endereco {
     
     private String idendereco;
     private String cep;

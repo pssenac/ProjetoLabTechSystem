@@ -1,8 +1,10 @@
 
-package Model;
+package Models;
+
+import java.util.Date;
 
 
-public class ClasseFuncionário {
+public class Funcionarios {
     
     
     private String idFuncionario;
@@ -12,7 +14,8 @@ public class ClasseFuncionário {
     private String telFuncionario;
     private String celFuncionario;
     private String emailFuncionario;
-    private String dataNascFuncionario;
+    private Date dataNascFuncionario;
+    private int fkEnderecoFuncionario;
 
     public String getIdFuncionario() {
         return idFuncionario;
@@ -70,14 +73,23 @@ public class ClasseFuncionário {
         this.emailFuncionario = emailFuncionario;
     }
 
-    public String getDataNascFuncionario() {
+    public Date getDataNascFuncionario() {
         return dataNascFuncionario;
     }
 
-    public void setDataNascFuncionario(String dataNascFuncionario) {
+    public void setDataNascFuncionario(Date dataNascFuncionario) {
         this.dataNascFuncionario = dataNascFuncionario;
     }
 
+    public int getFkEnderecoFuncionario() {
+        return fkEnderecoFuncionario;
+    }
+
+    public void setFkEnderecoFuncionario(int fkEnderecoFuncionario) {
+        this.fkEnderecoFuncionario = fkEnderecoFuncionario;
+    }
+
+    
     
     
     

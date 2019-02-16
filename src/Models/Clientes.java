@@ -1,8 +1,8 @@
 
-package Model;
+package Models;
 
 
-public class ClasseCliente {
+public class Clientes {
    
    private String idCliente;
    private String nomeCliente;
@@ -11,6 +11,7 @@ public class ClasseCliente {
    private String telCliente;
    private String celCliente;
    private String emailCliente;
+   private int fkEnderecoCliente;
 
     public String getIdCliente() {
         return idCliente;
@@ -67,6 +68,15 @@ public class ClasseCliente {
     public void setEmailCliente(String emailCliente) {
         this.emailCliente = emailCliente;
     }
+
+    public int getFkEnderecoCliente() {
+        return fkEnderecoCliente;
+    }
+
+    public void setFkEnderecoCliente(int fkEnderecoCliente) {
+        this.fkEnderecoCliente = fkEnderecoCliente;
+    }
+    
     
     
 }
