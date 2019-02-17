@@ -2,7 +2,7 @@
 package Models;
 
 
-public class Usuarios {
+public class Usuario {
     private String idUsuario;
     private String loginUsuario;
     private int perfilUsuario;

@@ -2,7 +2,7 @@
 package Models;
 
 
-public class Clientes {
+public class Cliente {
    
    private String idCliente;
    private String nomeCliente;

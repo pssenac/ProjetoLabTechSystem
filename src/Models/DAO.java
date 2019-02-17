@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
 
 
 public class DAO {
-    public Clientes cliente;
-    public Funcionarios funcionario;
-    public Usuarios usuario;
-    public Fornecedores fornecedor;
-    public Produtos produto;
-    public Vendas venda;
+    public Cliente cliente;
+    public Funcionario funcionario;
+    public Usuario usuario;
+    public Fornecedor fornecedor;
+    public Produto produto;
+    public Venda venda;
     public VendaProdutos vendaProdutos;
     public OrdemServiço ordemservico;
     public OrdemProdutos ordemProdutos;
@@ -43,7 +43,7 @@ public class DAO {
     public static final byte ALTERACAOVENDA = 13;
     public static final byte INCLUSAOVENDAPRODUTO = 14;
     public static final byte ALTERACAOVENDAPRODUTO = 15;
-    public static final byte INCLUSAORDEMSERVICO = 16;
+    public static final byte INCLUSAOORDEMSERVICO = 16;
     public static final byte ALTERACAOORDEMSERVICO = 17;
     public static final byte INCLUSAOORDEMPRODUTO = 18;
     public static final byte ALTERACAOORDEMPRODUTO = 19;
@@ -55,12 +55,12 @@ public class DAO {
     //<editor-fold defaultstate="collapsed" desc=" METODO DAO "> 
     public DAO(){
         bd = new ConexaoBD ();
-        cliente = new Clientes();
-        funcionario = new Funcionarios();
-        usuario = new Usuarios();
-        fornecedor = new Fornecedores();
-        produto = new Produtos();
-        venda = new Vendas();
+        cliente = new Cliente();
+        funcionario = new Funcionario();
+        usuario = new Usuario();
+        fornecedor = new Fornecedor();
+        produto = new Produto();
+        venda = new Venda();
         vendaProdutos = new VendaProdutos();
         ordemservico = new OrdemServiço();
         ordemProdutos = new OrdemProdutos();
@@ -338,7 +338,7 @@ public class DAO {
                 break;
                 
                 // ORDEM SERVICO
-                case INCLUSAORDEMSERVICO:
+                case INCLUSAOORDEMSERVICO:
                 sql = "insert into OrdemServico  values(null,?,?,?,?,?,?,?,?,?)";
                 bd.getConnection();
                 statement = bd.connection.prepareStatement(sql);

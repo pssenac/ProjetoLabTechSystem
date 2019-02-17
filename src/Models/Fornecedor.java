@@ -2,7 +2,7 @@
 package Models;
 
 
-public class Fornecedores {
+public class Fornecedor {
     
     private String IdFornecedor;
     private String cnpjFornecedor;

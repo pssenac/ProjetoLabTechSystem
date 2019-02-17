@@ -4,7 +4,7 @@ package Models;
 import java.util.Date;
 
 
-public class Produtos {
+public class Produto {
   
    private String idProduto;
    private String  nomeProduto;
