@@ -33,10 +33,10 @@ public class TelaAdmin extends javax.swing.JFrame {
 
         jpPrincipal = new javax.swing.JDesktopPane();
         btnFuncionario = new javax.swing.JButton();
-        btnPesquisaVenda = new javax.swing.JButton();
+        btnFornecedor = new javax.swing.JButton();
         btnRelatorio = new javax.swing.JButton();
         btnProduto = new javax.swing.JButton();
-        btnFornecedor = new javax.swing.JButton();
+        btnXXX = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         JM_cadastro = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -50,7 +50,7 @@ public class TelaAdmin extends javax.swing.JFrame {
         jpPrincipal.setLayout(new javax.swing.BoxLayout(jpPrincipal, javax.swing.BoxLayout.LINE_AXIS));
 
         btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/User-Group-icon.png"))); // NOI18N
-        btnFuncionario.setToolTipText("Cadastrar Cliente");
+        btnFuncionario.setToolTipText("Cadastrar Funcionário");
         btnFuncionario.setBorderPainted(false);
         btnFuncionario.setPreferredSize(new java.awt.Dimension(161, 137));
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -59,11 +59,11 @@ public class TelaAdmin extends javax.swing.JFrame {
             }
         });
 
-        btnPesquisaVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconfinder_icon-111-search_314689.png"))); // NOI18N
-        btnPesquisaVenda.setToolTipText("Vendas");
-        btnPesquisaVenda.addActionListener(new java.awt.event.ActionListener() {
+        btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaForn.png"))); // NOI18N
+        btnFornecedor.setToolTipText("Fornecedor");
+        btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisaVendaActionPerformed(evt);
+                btnFornecedorActionPerformed(evt);
             }
         });
 
@@ -76,11 +76,11 @@ public class TelaAdmin extends javax.swing.JFrame {
 
         btnProduto.setToolTipText("Ordem de Serviço");
 
-        btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fornecedores-icone.png"))); // NOI18N
-        btnFornecedor.setToolTipText("Estorno");
-        btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
+        btnXXX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/produtos_tela.png"))); // NOI18N
+        btnXXX.setToolTipText("Produtos");
+        btnXXX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFornecedorActionPerformed(evt);
+                btnXXXActionPerformed(evt);
             }
         });
 
@@ -118,28 +118,28 @@ public class TelaAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnPesquisaVenda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnXXX, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
+                .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpPrincipal)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPesquisaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
+                .addComponent(btnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnXXX, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 216, Short.MAX_VALUE))
+                .addGap(0, 218, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(735, 932));
@@ -183,6 +183,20 @@ public class TelaAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRelatorioActionPerformed
 
+    private void btnXXXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXXXActionPerformed
+        TelaProduto obj = new TelaProduto();
+
+        if (jpPrincipal.getAllFrames().length == 0){
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
+        }
+        else{
+            jpPrincipal.removeAll();
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
+        }
+    }//GEN-LAST:event_btnXXXActionPerformed
+
     private void btnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedorActionPerformed
         TelaFornecedor obj = new TelaFornecedor();
         if (jpPrincipal.getAllFrames().length == 0){
@@ -195,10 +209,6 @@ public class TelaAdmin extends javax.swing.JFrame {
             obj.setVisible(true);
         }
     }//GEN-LAST:event_btnFornecedorActionPerformed
-
-    private void btnPesquisaVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaVendaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPesquisaVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,9 +251,9 @@ public class TelaAdmin extends javax.swing.JFrame {
     private javax.swing.JMenu JM_cadastro;
     private javax.swing.JButton btnFornecedor;
     private javax.swing.JButton btnFuncionario;
-    private javax.swing.JButton btnPesquisaVenda;
     private javax.swing.JButton btnProduto;
     private javax.swing.JButton btnRelatorio;
+    private javax.swing.JButton btnXXX;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;

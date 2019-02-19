@@ -5,7 +5,7 @@
     <Property name="closable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="Cadastro de Produtos"/>
     <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-      <Image iconType="3" name="/imagens/produtos.png"/>
+      <Image iconType="3" name="/imagens/produtos_tela.png"/>
     </Property>
   </Properties>
   <SyntheticProperties>

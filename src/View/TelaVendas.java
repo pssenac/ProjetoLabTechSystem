@@ -74,7 +74,7 @@ public class TelaVendas extends javax.swing.JInternalFrame {
         txtValorServicoVenda2 = new javax.swing.JTextField();
 
         setClosable(true);
-        setTitle("Vendas");
+        setTitle("VENDAS");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/venda_Tela.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
