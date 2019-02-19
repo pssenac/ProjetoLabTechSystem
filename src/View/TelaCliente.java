@@ -5,6 +5,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 03758479100
@@ -16,6 +18,8 @@ public class TelaCliente extends javax.swing.JInternalFrame {
      */
     public TelaCliente() {
         initComponents();
+        LimpaCampo();
+
     }
 
     /**
@@ -73,6 +77,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jLabel1.setText("Id :");
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtNome.setEnabled(false);
 
         lbIdCliente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
@@ -95,6 +100,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jLabel7.setText("E-Mail :");
 
         txtEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtEmail.setEnabled(false);
 
         jpEndereco.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
 
@@ -105,26 +111,31 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         jLabel9.setText("Logradouro :");
 
         txtLogradouro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtLogradouro.setEnabled(false);
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel10.setText("Bairro :");
 
         txtBairro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBairro.setEnabled(false);
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setText("Número :");
 
         txtNumero.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtNumero.setEnabled(false);
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel12.setText("Complemento :");
 
         txtComplemento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtComplemento.setEnabled(false);
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Cidade :");
 
         txtCidade.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCidade.setEnabled(false);
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("UF :");
@@ -134,12 +145,14 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCep.setEnabled(false);
 
         try {
             txtCep1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCep1.setEnabled(false);
 
         javax.swing.GroupLayout jpEnderecoLayout = new javax.swing.GroupLayout(jpEndereco);
         jpEndereco.setLayout(jpEnderecoLayout);
@@ -212,12 +225,29 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         );
 
         btnAdicionar.setText("Novo Cliente");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Gravar");
+        btnSalvar.setEnabled(false);
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         btnAlterar.setText("Alterar");
+        btnAlterar.setEnabled(false);
 
         btnCancelar.setText("Cancelar");
 
@@ -261,18 +291,21 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtRg.setEnabled(false);
 
         try {
             txtTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTel.setEnabled(false);
 
         try {
             txtCel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCel.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -379,6 +412,76 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         setBounds(0, 0, 1205, 674);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        AtivarCampos(true, true, true, true, true, true, true, true, true, true, true,
+                true, true, true, false);
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        LimpaCampo();
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    public void LimpaCampo() {
+        txtBairro.setText(null);
+        txtCel.setText(null);
+        txtCep.setText(null);
+        txtCep1.setText(null);
+        txtCidade.setText(null);
+        txtComplemento.setText(null);
+        txtCpf.setText(null);
+        txtEmail.setText(null);
+        txtLogradouro.setText(null);
+        txtNome.setText(null);
+        txtNumero.setText(null);
+        txtRg.setText(null);
+        txtTel.setText(null);
+    }
+
+    public void AtivarCampos(boolean c1, boolean c2, boolean c3, boolean c4, boolean c5, boolean c6, boolean c7, boolean c8, boolean c9,
+            boolean c10, boolean c11, boolean c12, boolean c13, boolean c14, boolean c15) {
+        txtBairro.setEnabled(c1);
+        txtCel.setEnabled(c2);
+        txtCep.setEnabled(c3);
+        txtCep1.setEnabled(c4);
+        txtCidade.setEnabled(c5);
+        txtComplemento.setEnabled(c6);
+        txtCpf.setEnabled(c7);
+        txtEmail.setEnabled(c8);
+        txtLogradouro.setEnabled(c9);
+        txtNome.setEnabled(c10);
+        txtNumero.setEnabled(c11);
+        txtRg.setEnabled(c12);
+        txtTel.setEnabled(c13);
+        btnSalvar.setEnabled(c14);
+        btnAlterar.setEnabled(c15);
+
+    }
+
+    public void VerificarCamposVazios() {
+        if (txtBairro.getText().trim().isEmpty()
+                && txtCel.getText().trim().isEmpty()
+                && txtCep.getText().trim().isEmpty()
+                && txtCep1.getText().trim().isEmpty()
+                && txtCidade.getText().trim().isEmpty()
+                && txtComplemento.getText().trim().isEmpty()
+                && txtCpf.getText().trim().isEmpty()
+                && txtEmail.getText().trim().isEmpty()
+                && txtLogradouro.getText().trim().isEmpty()
+                && txtNome.getText().trim().isEmpty()
+                && txtNumero.getText().trim().isEmpty()
+                && txtRg.getText().trim().isEmpty()
+                && txtTel.getText().trim().isEmpty()) {
+            btnSalvar.setEnabled(false);
+        } else {
+            btnSalvar.setEnabled(true);
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
