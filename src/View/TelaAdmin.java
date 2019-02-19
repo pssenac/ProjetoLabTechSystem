@@ -158,11 +158,13 @@ public class TelaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu5MouseClicked
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
-        TelaCliente obj = new TelaCliente();
-        if (jpPrincipal.getAllFrames().length >= 0) {
+        TelaFuncionario obj = new TelaFuncionario();
+        if (jpPrincipal.getAllFrames().length == 0){
             jpPrincipal.add(obj);
             obj.setVisible(true);
-        } else {
+        }
+        else{
+            jpPrincipal.removeAll();
             jpPrincipal.add(obj);
             obj.setVisible(true);
         }
@@ -170,10 +172,12 @@ public class TelaAdmin extends javax.swing.JFrame {
 
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
         TelaOrdemServico obj = new TelaOrdemServico();
-        if (jpPrincipal.getAllFrames().length >= 0) {
+        if (jpPrincipal.getAllFrames().length == 0){
             jpPrincipal.add(obj);
             obj.setVisible(true);
-        } else {
+        }
+        else{
+            jpPrincipal.removeAll();
             jpPrincipal.add(obj);
             obj.setVisible(true);
         }
@@ -181,10 +185,12 @@ public class TelaAdmin extends javax.swing.JFrame {
 
     private void btnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedorActionPerformed
         TelaFornecedor obj = new TelaFornecedor();
-        if (jpPrincipal.getAllFrames().length >= 0) {
+        if (jpPrincipal.getAllFrames().length == 0){
             jpPrincipal.add(obj);
             obj.setVisible(true);
-        } else {
+        }
+        else{
+            jpPrincipal.removeAll();
             jpPrincipal.add(obj);
             obj.setVisible(true);
         }

@@ -208,25 +208,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnEstornoVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstornoVendaActionPerformed
         TelaFuncionario obj = new TelaFuncionario();
-        if(jpPrincipal.getAllFrames().length>=0){
-          jpPrincipal.add(obj);
-          obj.setVisible(true);
-          
+        if (jpPrincipal.getAllFrames().length == 0){
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
         }
-        else 
-        {
-          jpPrincipal.add(obj);
-          obj.setVisible(true);
-        
+        else{
+            jpPrincipal.removeAll();
+            jpPrincipal.add(obj);
+            obj.setVisible(true);
         }
     }//GEN-LAST:event_btnEstornoVendaActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
         TelaCliente obj = new TelaCliente();
-        if (jpPrincipal.getAllFrames().length >= 0) {         
+        if (jpPrincipal.getAllFrames().length == 0){
             jpPrincipal.add(obj);
             obj.setVisible(true);
-        } else {
+        }
+        else{
+            jpPrincipal.removeAll();
             jpPrincipal.add(obj);
             obj.setVisible(true);
         }
@@ -234,10 +234,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnOrdemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdemActionPerformed
         TelaOrdemServico obj = new TelaOrdemServico();
-        if (jpPrincipal.getAllFrames().length >= 0) {         
+        if (jpPrincipal.getAllFrames().length == 0){
             jpPrincipal.add(obj);
             obj.setVisible(true);
-        } else {
+        }
+        else{
+            jpPrincipal.removeAll();
             jpPrincipal.add(obj);
             obj.setVisible(true);
         }
