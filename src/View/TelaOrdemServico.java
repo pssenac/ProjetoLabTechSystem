@@ -87,7 +87,7 @@ public class TelaOrdemServico extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("ORDEM DE SERVIÇO");
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tete.png"))); // NOI18N
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ordem_tela.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("Nº :");

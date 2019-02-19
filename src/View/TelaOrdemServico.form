@@ -5,7 +5,7 @@
     <Property name="closable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="ORDEM DE SERVI&#xc7;O"/>
     <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-      <Image iconType="3" name="/imagens/tete.png"/>
+      <Image iconType="3" name="/imagens/ordem_tela.png"/>
     </Property>
   </Properties>
   <SyntheticProperties>

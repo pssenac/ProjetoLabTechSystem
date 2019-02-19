@@ -67,7 +67,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("CADASTRO DE CLIENTES");
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ClienteTelaPrincipal.png"))); // NOI18N
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cliente_tela.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("Id :");
