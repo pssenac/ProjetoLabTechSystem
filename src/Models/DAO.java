@@ -85,15 +85,30 @@ public class DAO {
         }
     }
     //</editor-fold>
+    
+    
+    
+    
 
     //<editor-fold defaultstate="collapsed" desc=" MÉTODO ATUALIZAR CLIENTE ">
+    public void carregarTabela() {
+        String sql = "select * from cliente";
+        try{
+            bd.getConnection();
+            statement = bd.connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+        }catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, erro);
+        }
+    }
+
     public String atualizarCliente(int operacao) {
         men = "Operação realizada com sucesso!";
         try {
             switch (operacao) {
                 // CLIENTE 
                 case INCLUSAOCLIENTE:
-                    sql = "insert into endereco ( cep, bairro, logradouro, complemento, numero, "
+                    sql = "insert into endereco (cep, bairro, logradouro, complemento, numero, "
                             + "cidade, estado) values(?,?,?,?,?,?,?)";
                     bd.getConnection();
                     statement = bd.connection.prepareStatement(sql);
@@ -107,7 +122,7 @@ public class DAO {
                     statement.executeUpdate();
                     try {
                         bd.getConnection();
-                        sql = "insert into cliente (aa, aaaa, aaaaaaaa, aaag, ak, sss, ssddds) values(?,?,?,?,?,?,null)";
+                        sql = "insert into cliente (nomeCliente, cpf, rg, telefone, celular, email,FKendereco) values(?,?,?,?,?,?,?)";
                         statement = bd.connection.prepareStatement(sql);
                         statement.setString(1, cliente.getNomeCliente());
                         statement.setString(2, cliente.getCpfCliente());
@@ -115,6 +130,7 @@ public class DAO {
                         statement.setString(4, cliente.getTelCliente());
                         statement.setString(5, cliente.getCelCliente());
                         statement.setString(6, cliente.getEmailCliente());
+                        statement.setString(7, cliente.getFkEnderecoCliente());
                         statement.executeUpdate();
 
                         statement.close();
@@ -149,6 +165,9 @@ public class DAO {
         return men;
     }
 //</editor-fold>
+    
+    
+    
 
 //<editor-fold defaultstate="collapsed" desc=" MÉTODO ATUALIZAR ">
     public String atualizar(int operacao) {
