@@ -5,10 +5,8 @@ import Models.DAO;
 public class ClienteController {
 
     public String salvarCliente(String nomeCliente, String cpfCliente, String rgCliente,
-            String telCliente, String celCliente, String emailCliente, int fkEnderecoCliente,
-            // DADOS ENDERECO 
-
-            int idEndereco, String cep, String bairro, String logradouro, String complemento,
+            String telCliente, String celCliente, String emailCliente, String fkEnderecoCliente,
+            String idEndereco, String cep, String bairro, String logradouro, String complemento,
             String numero, String cidade, String estado) {
 
         DAO dao = new DAO();
@@ -29,12 +27,12 @@ public class ClienteController {
         dao.endereco.setLogradouro(logradouro);
         dao.endereco.setNumero(numero);
 
-        String msgInclusao = dao.atualizar(DAO.INCLUSAOCLIENTE);
+        String msgInclusao = dao.atualizarCliente(DAO.INCLUSAOCLIENTE);
         return msgInclusao;
     }
 
     public String alterarCliente(String idCliente, String nomeCliente, String cpfCliente, String rgCliente,
-            String telCliente, String celCliente, String emailCliente, int fkEnderecoCliente) {
+            String telCliente, String celCliente, String emailCliente, String fkEnderecoCliente) {
         DAO dao = new DAO();
         dao.cliente.setIdCliente(idCliente);
         dao.cliente.setNomeCliente(nomeCliente);

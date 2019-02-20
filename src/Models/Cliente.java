@@ -3,6 +3,120 @@ package Models;
 
 
 public class Cliente {
+
+    /**
+     * @return the idCliente
+     */
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    /**
+     * @param idCliente the idCliente to set
+     */
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    /**
+     * @return the nomeCliente
+     */
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    /**
+     * @param nomeCliente the nomeCliente to set
+     */
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    /**
+     * @return the cpfCliente
+     */
+    public String getCpfCliente() {
+        return cpfCliente;
+    }
+
+    /**
+     * @param cpfCliente the cpfCliente to set
+     */
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;
+    }
+
+    /**
+     * @return the rgCliente
+     */
+    public String getRgCliente() {
+        return rgCliente;
+    }
+
+    /**
+     * @param rgCliente the rgCliente to set
+     */
+    public void setRgCliente(String rgCliente) {
+        this.rgCliente = rgCliente;
+    }
+
+    /**
+     * @return the telCliente
+     */
+    public String getTelCliente() {
+        return telCliente;
+    }
+
+    /**
+     * @param telCliente the telCliente to set
+     */
+    public void setTelCliente(String telCliente) {
+        this.telCliente = telCliente;
+    }
+
+    /**
+     * @return the celCliente
+     */
+    public String getCelCliente() {
+        return celCliente;
+    }
+
+    /**
+     * @param celCliente the celCliente to set
+     */
+    public void setCelCliente(String celCliente) {
+        this.celCliente = celCliente;
+    }
+
+    /**
+     * @return the emailCliente
+     */
+    public String getEmailCliente() {
+        return emailCliente;
+    }
+
+    /**
+     * @param emailCliente the emailCliente to set
+     */
+    public void setEmailCliente(String emailCliente) {
+        this.emailCliente = emailCliente;
+    }
+
+    /**
+     * @return the fkEnderecoCliente
+     */
+    public String getFkEnderecoCliente() {
+        return fkEnderecoCliente;
+    }
+
+    /**
+     * @param fkEnderecoCliente the fkEnderecoCliente to set
+     */
+    public void setFkEnderecoCliente(String fkEnderecoCliente) {
+        this.fkEnderecoCliente = fkEnderecoCliente;
+    }
+
+    
    
    private String idCliente;
    private String nomeCliente;
@@ -11,72 +125,8 @@ public class Cliente {
    private String telCliente;
    private String celCliente;
    private String emailCliente;
-   private int fkEnderecoCliente;
+   private String fkEnderecoCliente;
 
-    public String getIdCliente() {
-        return idCliente;
-    }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
-    public String getCpfCliente() {
-        return cpfCliente;
-    }
-
-    public void setCpfCliente(String cpfCliente) {
-        this.cpfCliente = cpfCliente;
-    }
-
-    public String getRgCliente() {
-        return rgCliente;
-    }
-
-    public void setRgCliente(String rgCliente) {
-        this.rgCliente = rgCliente;
-    }
-
-    public String getTelCliente() {
-        return telCliente;
-    }
-
-    public void setTelCliente(String telCliente) {
-        this.telCliente = telCliente;
-    }
-
-    public String getCelCliente() {
-        return celCliente;
-    }
-
-    public void setCelCliente(String celCliente) {
-        this.celCliente = celCliente;
-    }
-
-    public String getEmailCliente() {
-        return emailCliente;
-    }
-
-    public void setEmailCliente(String emailCliente) {
-        this.emailCliente = emailCliente;
-    }
-
-    public int getFkEnderecoCliente() {
-        return fkEnderecoCliente;
-    }
-
-    public void setFkEnderecoCliente(int fkEnderecoCliente) {
-        this.fkEnderecoCliente = fkEnderecoCliente;
-    }
-    
-    
-    
+  
 }

@@ -5,7 +5,15 @@
  */
 package View;
 
+import Controller.ClienteController;
+import Controller.ModeloTabela;
+import Models.ConexaoBD;
+import Models.DAO;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -17,6 +25,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
      * Creates new form TelaCliente
      */
     public TelaCliente() {
+         ConexaoBD bd = new ConexaoBD();
+        bd.getConnection();
+        String sqlTabela = "select * from cliente";
+        preencherTabela(sqlTabela);
         initComponents();
         LimpaCampo();
 
@@ -55,7 +67,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         txtCidade = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtCep = new javax.swing.JFormattedTextField();
-        txtCep1 = new javax.swing.JFormattedTextField();
+        txtUf = new javax.swing.JTextField();
         btnAdicionar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
@@ -147,13 +159,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         }
         txtCep.setEnabled(false);
 
-        try {
-            txtCep1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCep1.setEnabled(false);
-
         javax.swing.GroupLayout jpEnderecoLayout = new javax.swing.GroupLayout(jpEndereco);
         jpEndereco.setLayout(jpEnderecoLayout);
         jpEnderecoLayout.setHorizontalGroup(
@@ -189,9 +194,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                                 .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtCep1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 230, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 84, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jpEnderecoLayout.setVerticalGroup(
@@ -220,7 +225,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                     .addComponent(jLabel13)
                     .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
-                    .addComponent(txtCep1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -358,7 +363,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                                 .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,7 +428,13 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        
+
+        ClienteController clicontrol = new ClienteController();
+        clicontrol.salvarCliente(txtNome.getText(), txtCpf.getText(), txtRg.getText(), txtNumero.getText(),
+                txtCel.getText(), txtEmail.getText(), "vcs", null, txtCep.getText(), txtBairro.getText(),
+                txtLogradouro.getText(), txtComplemento.getText(), txtNumero.getText(),
+                txtCidade.getText(), txtUf.getText());
+
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -431,7 +442,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         txtBairro.setText(null);
         txtCel.setText(null);
         txtCep.setText(null);
-        txtCep1.setText(null);
+        txtUf.setText(null);
         txtCidade.setText(null);
         txtComplemento.setText(null);
         txtCpf.setText(null);
@@ -448,7 +459,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         txtBairro.setEnabled(c1);
         txtCel.setEnabled(c2);
         txtCep.setEnabled(c3);
-        txtCep1.setEnabled(c4);
+        txtUf.setEnabled(c4);
         txtCidade.setEnabled(c5);
         txtComplemento.setEnabled(c6);
         txtCpf.setEnabled(c7);
@@ -467,7 +478,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         if (txtBairro.getText().trim().isEmpty()
                 && txtCel.getText().trim().isEmpty()
                 && txtCep.getText().trim().isEmpty()
-                && txtCep1.getText().trim().isEmpty()
+                && txtUf.getText().trim().isEmpty()
                 && txtCidade.getText().trim().isEmpty()
                 && txtComplemento.getText().trim().isEmpty()
                 && txtCpf.getText().trim().isEmpty()
@@ -481,6 +492,48 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         } else {
             btnSalvar.setEnabled(true);
         }
+    }
+
+    public void preencherTabela(String SQL) {
+        DAO dao = new DAO();
+        ArrayList dados = new ArrayList();
+        String[] colunas = new String[]{"Id", "nome", "Cpf", "Rg", "Telefone", "celular", "email", "endereco"};
+        dao.executaSQL(SQL);
+        try {
+            dao.resultSet.first();
+            do {
+                dados.add(new Object[]{dao.resultSet.getString("a"), dao.resultSet.getString("aa"), dao.resultSet.getString("aaaa"),
+                    dao.resultSet.getString("aaaaaaaa"), dao.resultSet.getString("aaag"), dao.resultSet.getString("ak"),
+                    dao.resultSet.getString("sss"),dao.resultSet.getString("ssddds")});
+            } while (dao.resultSet.next());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex + "Ñ DEU");
+        }
+
+        ModeloTabela model = new ModeloTabela(dados, colunas);
+        jTable1.setModel(model); // recebe o modelo criado
+        
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(250);  // define o tamanho das colunas e se será redimensionado ou não
+        jTable1.getColumnModel().getColumn(1).setResizable(true);  // não permite alterar o tamanho da coluna
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(2).setResizable(false);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(3).setResizable(false);
+        jTable1.getColumnModel().getColumn(4).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(4).setResizable(false);
+        jTable1.getColumnModel().getColumn(5).setPreferredWidth(80);
+        jTable1.getColumnModel().getColumn(5).setResizable(false);
+        jTable1.getColumnModel().getColumn(6).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(6).setResizable(false);
+        jTable1.getColumnModel().getColumn(7).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(7).setResizable(false);
+        jTable1.getColumnModel().getColumn(8).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(8).setResizable(false);
+        
+
+        jTable1.getTableHeader().setReorderingAllowed(false);  // Não permite reordenar as colunas
+        jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF); // Não permite redimensionar a tabela
+        jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // permite selecionar apenas 1 elemento da tabela
     }
 
 
@@ -512,7 +565,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtBairro;
     private javax.swing.JFormattedTextField txtCel;
     private javax.swing.JFormattedTextField txtCep;
-    private javax.swing.JFormattedTextField txtCep1;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtComplemento;
     private javax.swing.JFormattedTextField txtCpf;
@@ -522,5 +574,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtNumero;
     private javax.swing.JFormattedTextField txtRg;
     private javax.swing.JFormattedTextField txtTel;
+    private javax.swing.JTextField txtUf;
     // End of variables declaration//GEN-END:variables
 }

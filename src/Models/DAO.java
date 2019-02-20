@@ -69,9 +69,6 @@ public class DAO {
     }
     //</editor-fold>
 
-    
-    
-    
     //<editor-fold defaultstate="collapsed" desc=" EXECUTAR SQL "> 
     public void executaSQL(String sql) {
         try {
@@ -89,9 +86,6 @@ public class DAO {
     }
     //</editor-fold>
 
-    
-    
-    
     //<editor-fold defaultstate="collapsed" desc=" MÉTODO ATUALIZAR CLIENTE ">
     public String atualizarCliente(int operacao) {
         men = "Operação realizada com sucesso!";
@@ -99,7 +93,8 @@ public class DAO {
             switch (operacao) {
                 // CLIENTE 
                 case INCLUSAOCLIENTE:
-                    sql = "insert into endereco values(null,?,?,?,?,?,?,?)";
+                    sql = "insert into endereco ( cep, bairro, logradouro, complemento, numero, "
+                            + "cidade, estado) values(?,?,?,?,?,?,?)";
                     bd.getConnection();
                     statement = bd.connection.prepareStatement(sql);
                     statement.setString(1, endereco.getCep());
@@ -110,24 +105,27 @@ public class DAO {
                     statement.setString(6, endereco.getCidade());
                     statement.setString(7, endereco.getEstado());
                     statement.executeUpdate();
-                    statement.close();
-                    
-                    
-                    
-                    
-                    sql = "insert into Cliente values(null,?,?,?,?,?,?,?)";
-                    bd.getConnection();
-                    statement = bd.connection.prepareStatement(sql);
-                    statement.setString(1, cliente.getNomeCliente());
-                    statement.setString(2, cliente.getCpfCliente());
-                    statement.setString(3, cliente.getRgCliente());
-                    statement.setString(4, cliente.getTelCliente());
-                    statement.setString(5, cliente.getCelCliente());
-                    statement.setString(6, cliente.getEmailCliente());
-                    statement.setInt(7, cliente.getFkEnderecoCliente());
-                    statement.executeUpdate();
-                    statement.close();
-                    break;
+                    try {
+                        bd.getConnection();
+                        sql = "insert into cliente (aa, aaaa, aaaaaaaa, aaag, ak, sss, ssddds) values(?,?,?,?,?,?,null)";
+                        statement = bd.connection.prepareStatement(sql);
+                        statement.setString(1, cliente.getNomeCliente());
+                        statement.setString(2, cliente.getCpfCliente());
+                        statement.setString(3, cliente.getRgCliente());
+                        statement.setString(4, cliente.getTelCliente());
+                        statement.setString(5, cliente.getCelCliente());
+                        statement.setString(6, cliente.getEmailCliente());
+                        statement.executeUpdate();
+
+                        statement.close();
+                        statement = bd.connection.prepareStatement(sql);
+
+                        break;
+
+                    } catch (SQLException erro) {
+                        JOptionPane.showMessageDialog(null, erro);
+
+                    }
 
                 case ALTERACAOCLIENTE:
                     sql = "update Cliente set   = ?,  = ?,   = ?,"
@@ -141,34 +139,24 @@ public class DAO {
                     statement.setString(4, cliente.getTelCliente());
                     statement.setString(5, cliente.getCelCliente());
                     statement.setString(6, cliente.getEmailCliente());
-                    statement.setInt(7, cliente.getFkEnderecoCliente());
                     statement.executeUpdate();
                     statement.close();
                     break;
             }
         } catch (SQLException erro) {
-
+            JOptionPane.showMessageDialog(null, erro);
         }
         return men;
     }
-        //</editor-fold>
+//</editor-fold>
 
-    
-    
-    
-    //<editor-fold defaultstate="collapsed" desc=" MÉTODO ATUALIZAR ">
-
-    
-    
-    
-    
-    
+//<editor-fold defaultstate="collapsed" desc=" MÉTODO ATUALIZAR ">
     public String atualizar(int operacao) {
         men = "Operação realizada com sucesso!";
         try {
             switch (operacao) {
                 // CLIENTE 
-                case INCLUSAOCLIENTE:
+                case 1:
                     sql = "insert into Cliente values(null,?,?,?,?,?,?,?)";
                     bd.getConnection();
                     statement = bd.connection.prepareStatement(sql);
@@ -178,7 +166,6 @@ public class DAO {
                     statement.setString(4, cliente.getTelCliente());
                     statement.setString(5, cliente.getCelCliente());
                     statement.setString(6, cliente.getEmailCliente());
-                    statement.setInt(7, cliente.getFkEnderecoCliente());
                     statement.executeUpdate();
                     statement.close();
                     break;
@@ -195,14 +182,13 @@ public class DAO {
                     statement.setString(4, cliente.getTelCliente());
                     statement.setString(5, cliente.getCelCliente());
                     statement.setString(6, cliente.getEmailCliente());
-                    statement.setInt(7, cliente.getFkEnderecoCliente());
                     statement.executeUpdate();
                     statement.close();
                     break;
 
                 // FUNCIONARIO
                 case INCLUSAOFUNCIONARIO:
-                    sql = "insert into Funcionario values(null,?,?,?,?,?,?,?,?)";
+                    sql = "insert into Funcionario values(null,?,?,?,?,?,?,?)";
                     bd.getConnection();
                     statement = bd.connection.prepareStatement(sql);
                     statement.setString(1, funcionario.getNomeFuncionario());
