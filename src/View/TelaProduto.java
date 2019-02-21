@@ -46,7 +46,7 @@ public class TelaProduto extends javax.swing.JInternalFrame {
         jLabel13 = new javax.swing.JLabel();
 
         setClosable(true);
-        setTitle("Cadastro de Produtos");
+        setTitle("CADASTRO DE PRODUTOS");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/produtos_tela.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

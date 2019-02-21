@@ -40,17 +40,16 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
         jLabel13 = new javax.swing.JLabel();
         txtCidade = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        txtCep = new javax.swing.JFormattedTextField();
         txtCep1 = new javax.swing.JFormattedTextField();
+        txtCep = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         lblCnpj = new javax.swing.JLabel();
         txtNomeEmpresa = new javax.swing.JTextField();
         lblCnpj1 = new javax.swing.JLabel();
-        txtCnpj1 = new javax.swing.JTextField();
+        txtCnpj = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        txtTel = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         lblCnpj4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -58,8 +57,8 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
         lblCnpj5 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtEmailRepresentante = new javax.swing.JTextField();
-        txtContatoCelular = new javax.swing.JFormattedTextField();
-        txtContatoFixo = new javax.swing.JFormattedTextField();
+        txtContatoFixo = new javax.swing.JTextField();
+        txtContatoCel = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -69,8 +68,11 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        txtTelFornecedor = new javax.swing.JTextField();
 
         setClosable(true);
+        setTitle("FORNECEDOR");
+        setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaForn.png"))); // NOI18N
 
         jpEndereco.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
@@ -107,16 +109,13 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
         jLabel14.setText("UF :");
 
         try {
-            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        try {
             txtCep1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+
+        txtCep.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCep.setText("Fazer verificação se há apenas números");
 
         javax.swing.GroupLayout jpEnderecoLayout = new javax.swing.GroupLayout(jpEndereco);
         jpEndereco.setLayout(jpEnderecoLayout);
@@ -141,8 +140,8 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
                         .addGroup(jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpEnderecoLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jpEnderecoLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -199,7 +198,7 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
         lblCnpj1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblCnpj1.setText("Cnpj");
 
-        txtCnpj1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCnpj.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setText("Telefone :");
@@ -208,12 +207,6 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
         jLabel7.setText("E-Mail :");
 
         txtEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-
-        try {
-            txtTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Representante"));
         jPanel2.setToolTipText("");
@@ -234,17 +227,11 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
 
         txtEmailRepresentante.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        try {
-            txtContatoCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtContatoFixo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtContatoFixo.setText("(xx) XXXX-XXXX");
 
-        try {
-            txtContatoFixo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtContatoCel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtContatoCel.setText("(xx) XXXX-XXXX");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -260,11 +247,11 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblCnpj5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContatoFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtContatoFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContatoCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtContatoCel, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -285,7 +272,7 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txtContatoCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContatoCel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -334,6 +321,9 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
 
         jButton5.setText("jButton1");
 
+        txtTelFornecedor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtTelFornecedor.setText("(xx) XXXX-XXXX");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -363,7 +353,7 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel5)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(txtTelFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel7)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -371,7 +361,7 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(lblCnpj1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtCnpj1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jpEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(34, 34, 34)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -404,11 +394,11 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblCnpj1)
-                            .addComponent(txtCnpj1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtTelFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -460,19 +450,19 @@ public class TelaFornecedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCnpj5;
     private javax.swing.JLabel lblIdFornecedor;
     private javax.swing.JTextField txtBairro;
-    private javax.swing.JFormattedTextField txtCep;
+    private javax.swing.JTextField txtCep;
     private javax.swing.JFormattedTextField txtCep1;
     private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtCnpj1;
+    private javax.swing.JTextField txtCnpj;
     private javax.swing.JTextField txtComplemento;
-    private javax.swing.JFormattedTextField txtContatoCelular;
-    private javax.swing.JFormattedTextField txtContatoFixo;
+    private javax.swing.JTextField txtContatoCel;
+    private javax.swing.JTextField txtContatoFixo;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmailRepresentante;
     private javax.swing.JTextField txtLogradouro;
     private javax.swing.JTextField txtNomeEmpresa;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtRepresentante;
-    private javax.swing.JFormattedTextField txtTel;
+    private javax.swing.JTextField txtTelFornecedor;
     // End of variables declaration//GEN-END:variables
 }

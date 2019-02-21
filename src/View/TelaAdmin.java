@@ -52,7 +52,9 @@ public class TelaAdmin extends javax.swing.JFrame {
         btnFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/User-Group-icon.png"))); // NOI18N
         btnFuncionario.setToolTipText("Cadastrar Funcionário");
         btnFuncionario.setBorderPainted(false);
-        btnFuncionario.setPreferredSize(new java.awt.Dimension(161, 137));
+        btnFuncionario.setMaximumSize(new java.awt.Dimension(115, 115));
+        btnFuncionario.setMinimumSize(new java.awt.Dimension(115, 115));
+        btnFuncionario.setPreferredSize(new java.awt.Dimension(115, 115));
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFuncionarioActionPerformed(evt);
@@ -61,23 +63,37 @@ public class TelaAdmin extends javax.swing.JFrame {
 
         btnFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaForn.png"))); // NOI18N
         btnFornecedor.setToolTipText("Fornecedor");
+        btnFornecedor.setMaximumSize(new java.awt.Dimension(115, 115));
+        btnFornecedor.setMinimumSize(new java.awt.Dimension(115, 115));
+        btnFornecedor.setPreferredSize(new java.awt.Dimension(115, 115));
         btnFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFornecedorActionPerformed(evt);
             }
         });
 
-        btnRelatorio.setToolTipText("Ordem de Serviço");
+        btnRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Lista.png"))); // NOI18N
+        btnRelatorio.setToolTipText("Relatórios");
+        btnRelatorio.setMaximumSize(new java.awt.Dimension(115, 115));
+        btnRelatorio.setMinimumSize(new java.awt.Dimension(115, 115));
+        btnRelatorio.setPreferredSize(new java.awt.Dimension(115, 115));
         btnRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRelatorioActionPerformed(evt);
             }
         });
 
-        btnProduto.setToolTipText("Ordem de Serviço");
+        btnProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/voltar.png"))); // NOI18N
+        btnProduto.setToolTipText("Voltar");
+        btnProduto.setMaximumSize(new java.awt.Dimension(115, 115));
+        btnProduto.setMinimumSize(new java.awt.Dimension(115, 115));
+        btnProduto.setPreferredSize(new java.awt.Dimension(115, 115));
 
         btnXXX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/produtos_tela.png"))); // NOI18N
         btnXXX.setToolTipText("Produtos");
+        btnXXX.setMaximumSize(new java.awt.Dimension(115, 115));
+        btnXXX.setMinimumSize(new java.awt.Dimension(115, 115));
+        btnXXX.setPreferredSize(new java.awt.Dimension(115, 115));
         btnXXX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXXXActionPerformed(evt);
@@ -118,11 +134,11 @@ public class TelaAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnXXX, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXXX, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRelatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
         );
@@ -130,16 +146,15 @@ public class TelaAdmin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpPrincipal)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(btnXXX, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 218, Short.MAX_VALUE))
+                .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnXXX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addComponent(btnProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setSize(new java.awt.Dimension(735, 932));
@@ -171,7 +186,7 @@ public class TelaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
-        TelaOrdemServico obj = new TelaOrdemServico();
+       ListasVendas_Compras_Ordem obj = new ListasVendas_Compras_Ordem();
         if (jpPrincipal.getAllFrames().length == 0){
             jpPrincipal.add(obj);
             obj.setVisible(true);
